@@ -51,11 +51,11 @@ const ClassDailySchedule = () => {
           const isOpen = expandedDate === day.date;
 
           return (
-            <div key={day.date} className="bg-slate-800 rounded-lg shadow">
+            <div key={day.date} className="bg-zinc-800 rounded-lg shadow">
               {/* Accordion header */}
               <div
                 onClick={() => setExpandedDate(isOpen ? null : day.date)}
-                className="p-4 cursor-pointer flex justify-between items-center hover:bg-slate-700 transition"
+                className="p-4 cursor-pointer flex justify-between items-center hover:bg-zinc-700 transition"
               >
                 <span className="font-bold">{day.date}</span>
                 <span>{isOpen ? "▲" : "▼"}</span>
@@ -63,16 +63,16 @@ const ClassDailySchedule = () => {
 
               {/* Accordion content */}
               {isOpen && (
-                <div className="p-4 border-t border-slate-700 space-y-2">
+                <div className="p-4 border-t border-zinc-700 space-y-2">
                   {day.periods.map((p, i) => (
                     <div
                       key={i}
-                      className="flex justify-between bg-slate-900 p-2 rounded"
+                      className="flex justify-between bg-zinc-900 p-2 rounded"
                     >
                       <span>
                         Period {i + 1}: {p.subject}
                       </span>
-                      <span className="text-slate-400">{p.topic}</span>
+                      <span className="text-zinc-400">{p.topic}</span>
                     </div>
                   ))}
                 </div>

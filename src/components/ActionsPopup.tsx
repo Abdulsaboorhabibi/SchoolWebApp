@@ -5,18 +5,18 @@ const ActionsPopup = () => {
 
   return (
     <div>
-      <div className="flex flex-row gap-8">
+      <div className="flex flex-row gap-6">
         <ul className="space-y-2 flex-1 w-full min-w-[150px]">
           <li
             onClick={() => navigate("/projects")}
-            className=" w-full cursor-pointer hover:text-blue-600 px-2 py-1 rounded transition"
+            className=" w-full cursor-pointer hover:text-blue-600 px-2 py-2 rounded transition"
           >
             Salaries
           </li>
           <li>
             <a
               href="/users"
-              className=" w-full hover:text-blue-600 px-2 py-1 rounded transition"
+              className=" w-full cursor-pointer hover:text-blue-600 px-2 py-2 rounded transition"
             >
               Safe
             </a>
@@ -26,7 +26,7 @@ const ActionsPopup = () => {
           <li>
             <a
               href="/reports"
-              className=" w-full hover:text-blue-600 px-2 py-1 rounded transition"
+              className="w-full cursor-pointer hover:text-blue-600 px-2 py-2 rounded transition"
             >
               Reports
             </a>
@@ -34,7 +34,7 @@ const ActionsPopup = () => {
           <li>
             <a
               href="/analytics"
-              className=" w-full hover:text-blue-600 px-2 py-1 rounded transition"
+              className="w-full cursor-pointer hover:text-blue-600 px-2 py-2 rounded transition"
             >
               Analytics
             </a>

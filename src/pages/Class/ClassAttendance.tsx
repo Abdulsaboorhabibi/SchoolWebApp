@@ -6,7 +6,7 @@ type Student = {
 };
 
 const AttendanceSheet = () => {
-  const students: Student[] = Array.from({ length: 24 }, (_, i) => ({
+  const students: Student[] = Array.from({ length: 50 }, (_, i) => ({
     id: i + 1,
     name: `Student ${i + 1}`,
   }));
@@ -38,8 +38,8 @@ const AttendanceSheet = () => {
   };
 
   return (
-    <div className="p-6 space-y-8">
-      <h2 className="text-4xl font-bold">Attendance</h2>
+    <div className="p-6 space-y-6">
+      <h2 className="text-xl font-semibold">Attendance</h2>
 
       {/* Summary */}
       <div className="grid grid-cols-2 gap-6">
@@ -56,7 +56,7 @@ const AttendanceSheet = () => {
 
       {/* Present Students */}
       <div>
-        <h3 className="text-2xl font-bold text-green-400 mb-4">
+        <h3 className="text-xl font-semibold text-green-400 mb-4">
           Present Students
         </h3>
 
@@ -71,15 +71,21 @@ const AttendanceSheet = () => {
                   [s.id]: false,
                 }));
               }}
-              className={`flex justify-between items-center p-4 rounded-lg transition
+              className={`flex justify-between items-center p-6 rounded-lg transition-all
                 ${
                   submitted
                     ? "bg-green-700 opacity-70 cursor-not-allowed"
                     : "bg-green-600 hover:bg-green-500 cursor-pointer"
                 }`}
             >
-              <span className="text-lg">{s.name}</span>
-              <span className="font-bold text-xl">P</span>
+              <div className="flex justify-start items-center select-none gap-4">
+                <div className="w-20 h-20 rounded-full bg-slate-500 shadow border-4 border-slate-200"></div>
+                <div>
+                  <span className="text-lg font-semibold block">{s.name}</span>
+                  <span className="text-sm">{s.id}</span>
+                </div>
+              </div>
+              <span className="font-semibold text-xl">P</span>
             </div>
           ))}
         </div>
@@ -87,7 +93,7 @@ const AttendanceSheet = () => {
 
       {/* Absent Students */}
       <div>
-        <h3 className="text-2xl font-bold text-red-400 mb-4">
+        <h3 className="text-xl font-semibold text-red-400 mb-4">
           Absent Students
         </h3>
 
@@ -102,15 +108,21 @@ const AttendanceSheet = () => {
                   [s.id]: true,
                 }));
               }}
-              className={`flex justify-between items-center p-4 rounded-lg transition
+              className={`flex justify-between items-center p-4 rounded-lg transition-all
                 ${
                   submitted
                     ? "bg-slate-800 opacity-70 cursor-not-allowed"
                     : "bg-slate-800 hover:bg-slate-700 cursor-pointer"
                 }`}
             >
-              <span className="text-lg">{s.name}</span>
-              <span className="font-bold text-xl text-red-500">A</span>
+              <div className="flex justify-start items-center select-none gap-4">
+                <div className="w-20 h-20 rounded-full bg-red-500 shadow border-4 border-slate-200"></div>
+                <div>
+                  <span className="text-lg font-semibold block">{s.name}</span>
+                  <span className="text-sm">{s.id}</span>
+                </div>
+              </div>
+              <span className="font-semibold text-xl text-red-500">A</span>
             </div>
           ))}
         </div>
@@ -120,7 +132,7 @@ const AttendanceSheet = () => {
       <button
         disabled={submitted || saving}
         onClick={submitAttendance}
-        className={`w-full py-4 text-xl font-bold rounded-xl transition
+        className={`w-full py-4 text-xl font-semibold rounded-xl transition-all
           ${
             submitted
               ? "bg-gray-600 cursor-not-allowed"

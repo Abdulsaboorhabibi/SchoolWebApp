@@ -15,7 +15,7 @@ const ClassDashboard = () => {
 
   return (
     <div className="m-6 space-y-6">
-      <h1 className="text-4xl font-bold">
+      <h1 className="text-xl font-semibold">
         {className} – {year}
       </h1>
 
@@ -24,9 +24,9 @@ const ClassDashboard = () => {
           <div
             key={card.title}
             onClick={() => navigate(`/class/${year}/${className}/${card.path}`)}
-            className="p-10 rounded-xl bg-slate-800 hover:bg-slate-700 cursor-pointer transition shadow-lg text-center"
+            className="p-16 rounded-xl bg-zinc-300 dark:bg-zinc-800 hover:bg-zinc-400 dark:hover:bg-zinc-700 cursor-pointer transition-all shadow-lg text-center"
           >
-            <h2 className="text-3xl font-semibold">{card.title}</h2>
+            <h2 className="text-2xl font-semibold">{card.title}</h2>
           </div>
         ))}
       </div>
